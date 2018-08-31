@@ -1,0 +1,53 @@
+parameters to be considered:
+1.count of messages in chat thread - only after a certain timestamp like within a month
+	- with time weight decreases(40)
+2.comments(30)
+3.likes(20)
+4.tags on status(70)
+	- direct add to closeness
+5.tags on posts(60)
+	- concept would be like :
+		greater the current closeness , greater will be the increasing amount of current closeness
+6.chat duration(50)
+	- We will have array of session durations ,
+		longer the duration times , greater would be closeness
+7.recent chats(10)
+8.session context - ( to be continued later ... )
+
+-----------------------------------------------------------------------------------------------------
+
+priorities
+4,5,6,1,2,3,7
+
+-----------------------------------------------------------------------------------------------------
+Formulas
+ 
+ - 4. status updated -- 
+ 		i)decrease everyone's closeness factor by 5(if CF-5<0 then CF=0)
+ 		ii)increase the tagged ppl's CF by 70
+ - 5. posts --
+ 		i)decrease everyone's closeness factor by 8
+ 		ii)increase the tagged ppl's CF by 60
+ - 6. everyday at 4am, collect duration of each session in an array i.e arr[i] and,
+ 	  	for each friend :
+ 	  		if(individual day ka session duration == 0 ){
+ 	  			decrease CF by 5
+ 	  		}
+ 	  		else {
+ 	  			CF+=( [Sum(arr[i])/(5hours*60mins)]*50 )  //Scale : adding 50 for 5hours chatting
+ 	  		} 
+ - 1. for each friend:
+ 		CF-=3
+ 		for all sessions
+ 			if(session ending day - current day <=1){
+ 				totalMsgs+=session.msgCount;
+ 			}
+ 		CF += (totalMsgs/50)*40
+
+ - 2. if a userName comments on a friend's post ,
+ 			for every comment
+ 				CF += 3
+
+ - 3. if a userName likes on a friend's post ,
+ 			for every like
+ 				CF += 2			

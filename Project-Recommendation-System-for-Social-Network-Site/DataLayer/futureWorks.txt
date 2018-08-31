@@ -1,0 +1,10 @@
+0. Consider message length, 
+1. Determining context of the message , contexts are :
+	- personal (closeness factor)
+	- professional (linked in type suggestion)
+	- casual (skipping while considering closeness)
+	- spam detection (block recommendation for some time)
+		-	definite blocking ( 5days period eg ) - for may be close ppl like break up
+		-	forever blocking for real spamming ppl
+
+2. Determining context of the comment :
