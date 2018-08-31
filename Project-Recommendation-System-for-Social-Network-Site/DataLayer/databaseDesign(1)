@@ -1,0 +1,48 @@
+userName: akashID --> "_id"
+userPassword : akash123
+wallID : akashWall
+
+
+
+
+
+--Console--
+ 
+1.Signup
+	1.1 SignUpClass 
+		1.1.1.	inputDetails and insert into "userProfile" & "registeredUser"
+				- friendList : 2 records
+				 				- userName 
+
+				 			friendList : [
+				 				friend1 : {
+				 					userName : "rituId"
+				 				}
+				 				friend2 : {
+				 					userName : "anuragID"
+				 				}
+				 			]
+				- Also wallID (autoCode)
+		1.1.2 	makeWall
+				-	wallID, userName, status(content , likes) ( Hey there i am using FriendSpace )
+				show wall
+
+2.Login
+	1.1 LoginClass
+		1.1.1 authenticate 
+				getUserName , check in registeredUser , then match userPassword
+				if successfull , 
+						show wall
+							parse all online users - show
+
+
+
+						set isOnline - true
+
+
+
+
+MainClass
+	-DBConnector
+	-runWebsite
+		-show Page ( Login / Signup)

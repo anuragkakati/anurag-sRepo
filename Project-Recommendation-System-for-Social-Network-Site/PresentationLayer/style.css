@@ -1,0 +1,23 @@
+body{
+	font-family: 'Josefin Slab', serif;	
+}
+
+h2{
+	font-weight: bold;
+}
+
+.scrollBar{
+	max-height:450px;
+	overflow-y:scroll;
+	overflow-x:static;
+}
+
+.profile-pic{
+	height:auto;
+	width:100%;
+}
+
+.friend-pic{
+	height:90px;
+	width:70px;
+}
